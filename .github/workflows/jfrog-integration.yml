@@ -24,11 +24,8 @@ jobs:
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
           
       - name: Install Deps
-        run: jfrog pipi install .
-        env:
-          JF_URL: ${{ secrets.JF_URL }}
-          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
-          
+	run: jf pip install .
+                 
       - name: Package the project
         run: python setup.py sdist bdist_wheel
         
